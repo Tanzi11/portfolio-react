@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 import Navigation from '../Component/Navigation'
 
 
-export default class Header extends Component {
-  render() {
+const Header = () => {
     return (
       <React.Fragment>
       <header id="home">
       <nav id="nav-wrap">
        <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
        <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-       <ul id="nav" className="nav">
          <Navigation />
-      </ul> {/* end #nav */}
+       {/* end #nav */}
      </nav> {/* end #nav-wrap */}
      <div className="row banner">
        <div className="banner-text">
@@ -39,4 +37,6 @@ export default class Header extends Component {
       </React.Fragment>
     );
   }
-}
+
+
+export default Header

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
-export default class Resume extends Component {
-  render() {
+const Resume = () => {
     return (
       <React.Fragment>
-      {/*generated code*/}
       <section id="resume">
         {/* Education
       ----------------------------------------------- */}
@@ -100,4 +98,5 @@ export default class Resume extends Component {
       </React.Fragment>
     );
   }
-}
+
+export default Resume
