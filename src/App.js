@@ -9,8 +9,13 @@ import About from './Component/About';
 import Resume from './Component/Resume';
 import Project from './container/Project'
 import Contact from './container/Contact';
+import {getProjects} from './actions/projectActions';
+import {connect} from 'react-redux'
 
 const App = () => {
+  function componentDidMount() {
+    this.getProjects()
+  }
   return (
     <Router>
     <div>
@@ -24,4 +29,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default connect(null,{getProjects})(App)
