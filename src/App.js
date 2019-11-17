@@ -14,7 +14,8 @@ import {connect} from 'react-redux'
 
 const App = () => {
   function componentDidMount() {
-    this.getProjects()
+    debugger
+    this.props.getProjects()
   }
   return (
     <Router>
@@ -29,4 +30,10 @@ const App = () => {
   );
 }
 
-export default connect(null,{getProjects})(App)
+const mapStateToProps = (state) => {
+  return {
+    all_projects: state.all_projects
+  };
+};
+
+export default connect(mapStateToProps,{getProjects})(App)
