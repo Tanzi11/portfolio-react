@@ -18,7 +18,7 @@ const App = () => {
       <div>
         <Header />
         <Switch>
-          <Route exact path="/" render={() => <h1>Home Page</h1>} />
+          <Route exact path="/" render={() => <h1>Welcome!</h1>} />
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
           <Route path="/portfolio" component={ProjectList} />
