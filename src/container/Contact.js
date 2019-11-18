@@ -19,7 +19,7 @@ export default class Contact extends Component {
               <div className="row">
                 <div className="eight columns">
                   {/* form */}
-                  <form action method="post" id="contactForm" name="contactForm">
+                  <form method="post" id="contactForm" name="contactForm">
                     <fieldset>
                       <div>
                         <label htmlFor="contactName">Name <span className="required">*</span></label>
