@@ -13,7 +13,6 @@ class ProjectList extends Component {
   }
 
   componentDidMount() {
-    console.log('1. dispatch action in didmount')
     this.props.getProjects();
   }
 
