@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Navigation = () => {
   return (
     <React.Fragment>
-      <ul id="nav" class="nav">
-         <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-         <li><a class="smoothscroll" href="#about">About</a></li>
-        <li><a class="smoothscroll" href="#resume">Resume</a></li>
-         <li><a class="smoothscroll" href="#portfolio">Projects</a></li>
-         <li><a class="smoothscroll" href="#contact">Contact</a></li>
-      </ul>
+      <ul id="nav" className="nav">
+        <nav>
+         <li className="current"><Link className="smoothscroll" to="/">Home</Link></li>
+         <li><Link className="smoothscroll" to="/about">About</Link></li>
+        <li><Link className="smoothscroll" to="/resume">Resume</Link></li>
+         <li><Link className="smoothscroll" to="/portfolio">Projects</Link></li>
+         <li><Link className="smoothscroll" to="/contact">Contact</Link></li>
+         </nav>
+    </ul>
     </React.Fragment>
   )
 }
