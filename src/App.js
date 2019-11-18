@@ -1,39 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import Navigation from './container/Navigation';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './Component/Header';
-import About from './Component/About';
-import Resume from './Component/Resume';
-import Project from './container/Project'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './component/Header';
+import About from './component/About';
+import Resume from './component/Resume';
+import ProjectList from './container/ProjectList'
 import Contact from './container/Contact';
 import {getProjects} from './actions/projectActions';
 import {connect} from 'react-redux'
 
+//component => action => reducer => store => component
 const App = () => {
-  function componentDidMount() {
-    debugger
-    this.props.getProjects()
-  }
   return (
     <Router>
-    <div>
-      <Header />
-      <Route exact path="/" component={About} />
-      <Route exact path="/" component={Resume} />
-      <Route exact path="/" component={Project} />
-      <Route exact path="/" component={Contact} />
-    </div>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" render={() => <h1>Home Page</h1>} />
+          <Route path="/about" component={About} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/portfolio" component={ProjectList} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </div>
   </Router>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    all_projects: state.all_projects
-  };
-};
-
-export default connect(mapStateToProps,{getProjects})(App)
+export default App;
